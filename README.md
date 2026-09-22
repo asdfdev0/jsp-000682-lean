@@ -20,10 +20,10 @@ This formalization intentionally matches the literal existential JSP catalog wor
 
 Toolchain: Lean 4.33.0.
 
-Mathlib is pinned in `lakefile.lean` to commit `db584cd6d46c92f209a44c0f1c829460d327499d`.
+Mathlib is pinned in `lakefile.lean` and `lake-manifest.json` to commit `db584cd6d46c92f209a44c0f1c829460d327499d`.
 
 ```bash
-lake update
+lake exe cache get
 lake build
 lake env lean JSP000682/Solution.lean
 ```
@@ -34,4 +34,4 @@ The source includes:
 #print axioms JSP000682.jsp_000682_literal
 ```
 
-so the axiom audit is printed by the final command.
+so the axiom audit is printed by the final command. CI runs the same build and theorem check on every push to `main`.
